@@ -3,6 +3,7 @@
     {
       "id": 40,
       "player_name": "Jayson Tatum",
+      "image": tatum.png,
       "age": 24,
       "games": 74,
       "games_started": 74,
