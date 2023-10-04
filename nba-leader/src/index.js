@@ -10,6 +10,9 @@
 //   </React.StrictMode>
 // );
 
+// offensive score: at least 60 games, points / minutes_played 
+// defense is STL * 0.4 + BLK * .6
+    
 const URL = 'http://localhost:3000/players'
 const addBtn = document.querySelector('#new-toy-btn')
 const toyFormCont = document.querySelector('.container')

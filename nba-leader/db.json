@@ -4,15 +4,13 @@
       "id": 1,
       "player_name": "Jayson Tatum",
       "image": "https://a.espncdn.com/combiner/i?img=/i/headshots/nba/players/full/4065648.png&w=350&h=254",
-     // offensive score: at least 60 games, points / minutes_played 
       "games": 74,
       "minutes_played": 2732,
       "AST": 342,
       "STL": 78,
       "BLK": 51,
-      // defense is STL * 0.4 + BLK * .6
       "PTS": 2225,
-      "team": "BOS",
+      "team": "BOS"
     },
     {
       "id": 2,
@@ -24,7 +22,7 @@
       "STL": 66,
       "BLK": 112,
       "PTS": 2183,
-      "team": "PHI",
+      "team": "PHI"
     },
     {
       "id": 3,
@@ -36,7 +34,7 @@
       "STL": 90,
       "BLK": 33,
       "PTS": 2138,
-      "team": "DAL",
+      "team": "DAL"
     },
     {
       "id": 4,
@@ -48,7 +46,7 @@
       "STL": 112,
       "BLK": 65,
       "PTS": 2135,
-      "team": "OKC",
+      "team": "OKC"
     },
     {
       "id": 5,
@@ -60,7 +58,7 @@
       "STL": 52,
       "BLK": 51,
       "PTS": 1959,
-      "team": "MIL",
+      "team": "MIL"
     },
     {
       "id": 6,
@@ -72,7 +70,7 @@
       "STL": 125,
       "BLK": 58,
       "PTS": 1946,
-      "team": "MIN",
+      "team": "MIN"
     },
     {
       "id": 7,
@@ -84,7 +82,7 @@
       "STL": 49,
       "BLK": 21,
       "PTS": 1936,
-      "team": "NYK",
+      "team": "NYK"
     },
     {
       "id": 8,
@@ -96,7 +94,7 @@
       "STL": 99,
       "BLK": 27,
       "PTS": 1922,
-      "team": "CLE",
+      "team": "CLE"
     },
     {
       "id": 9,
@@ -108,7 +106,7 @@
       "STL": 80,
       "BLK": 9,
       "PTS": 1914,
-      "team": "ATL",
+      "team": "ATL"
     },
     {
       "id": 10,
@@ -120,7 +118,7 @@
       "STL": 69,
       "BLK": 18,
       "PTS": 1913,
-      "team": "CHI",
+      "team": "CHI"
     },
     {
       "id": 11,
@@ -132,7 +130,7 @@
       "STL": 50,
       "BLK": 18,
       "PTS": 1866,
-      "team": "POR",
+      "team": "POR"
     },
     {
       "id": 12,
@@ -144,7 +142,7 @@
       "STL": 83,
       "BLK": 23,
       "PTS": 1826,
-      "team": "SAC",
+      "team": "SAC"
     },
     {
       "id": 13,
@@ -156,7 +154,7 @@
       "STL": 83,
       "BLK": 36,
       "PTS": 1816,
-      "team": "CHI",
+      "team": "CHI"
     },
     {
       "id": 14,
@@ -168,7 +166,7 @@
       "STL": 75,
       "BLK": 26,
       "PTS": 1784,
-      "team": "BOS",
+      "team": "BOS"
     },
     {
       "id": 15,
@@ -180,7 +178,7 @@
       "STL": 65,
       "BLK": 36,
       "PTS": 1720,
-      "team": "TOR",
+      "team": "TOR"
     },
     {
       "id": 16,
@@ -192,7 +190,7 @@
       "STL": 42,
       "BLK": 38,
       "PTS": 1691,
-      "team": "UTA",
+      "team": "UTA"
     },
     {
       "id": 17,
@@ -204,7 +202,7 @@
       "STL": 87,
       "BLK": 47,
       "PTS": 1690,
-      "team": "DEN",
+      "team": "DEN"
     },
     {
       "id": 18,
@@ -216,7 +214,7 @@
       "STL": 59,
       "BLK": 18,
       "PTS": 1683,
-      "team": "HOU",
+      "team": "HOU"
     },
     {
       "id": 19,
@@ -228,7 +226,7 @@
       "STL": 63,
       "BLK": 21,
       "PTS": 1675,
-      "team": "GSW",
+      "team": "GSW"
     },
     {
       "id": 20,
@@ -240,7 +238,7 @@
       "STL": 52,
       "BLK": 20,
       "PTS": 1648,
-      "team": "GSW",
+      "team": "GSW"
     },
     {
       "id": 21,
@@ -252,7 +250,7 @@
       "STL": 61,
       "BLK": 15,
       "PTS": 1633,
-      "team": "NYK",
+      "team": "NYK"
     },
     {
       "id": 22,
@@ -264,7 +262,7 @@
       "STL": 66,
       "BLK": 16,
       "PTS": 1596,
-      "team": "MEM",
+      "team": "MEM"
     },
     {
       "id": 23,
@@ -276,7 +274,7 @@
       "STL": 50,
       "BLK": 32,
       "PTS": 1590,
-      "team": "LAL",
-    },
+      "team": "LAL"
+    }
   ]
 }
