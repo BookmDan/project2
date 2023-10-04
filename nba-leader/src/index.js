@@ -55,40 +55,15 @@ function createToyCard(toy) {
   let toyDivCard = document.createElement('div')
   toyDivCard.className = 'card' 
 
-  // toyDivCard.innerHTML = `
-  //   <h2>${toy.name}</h2>
-  //   <img src ="${toy.name}" class = "toy-avatar"/>
-  //   <p>${toy.likes} Likes </p>
-  // `
-
   let toyh2 = document.createElement('h2')
-  toyh2.innerText = toy.name
+  toyh2.innerText = toy.player_name
   let toyImg = document.createElement('img')
   toyImg.src = toy.image
   toyImg.className = 'toy-avatar'
-  let toyLikes = document.createElement('p')
-  toyLikes.innerText = toy.likes + " Likes";
-  let toyLikeButton = document.createElement('button')
-  toyLikeButton.className = 'toy-btn'
-  toyLikeButton.innerText = "Like ♥" //💖"
-  toyLikeButton.addEventListener('click', function () {
-    // console.log(`add like to id: `, toy.id);
-    toy.likes++
-    fetch(URL + "/" + toy.id, {
-      method: 'PUT',
-      headers: {'Content-Type': 'application/json'},
-      body: JSON.stringify({name: toy.name, image: toy.image, likes: toy.likes})
-    })
-    .then(res => res.json())
-    .then(json => {
-      toyLikes.innerText = toy.likes + " Likes";
-    })
-  })
+ 
   toyCollection.appendChild(toyDivCard)
   toyDivCard.appendChild(toyh2)
   toyDivCard.appendChild(toyImg)
-  toyDivCard.appendChild(toyLikes)
-  toyDivCard.appendChild(toyLikeButton)
 }
 
 function createNewToy(name,url){
