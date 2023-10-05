@@ -26,42 +26,6 @@
   </div>
   <div id="root"></div>
 
-  <script>
-    const playerData = {
-      "results": [
-        {
-          "id": 40,
-          "player_name": "Jayson Tatum",
-          "image": "jayson_tatum.png"
-        },
-        {
-          "id": 20,
-          "player_name": "Joel Embiid",
-          "image": "joel_embiid.png"
-        }
-        // ... other players
-      ]
-    };
-
-    const playerProfiles = document.getElementById('playerProfiles');
-
-    playerData.results.forEach(player => {
-      const playerCard = document.createElement('div');
-      playerCard.classList.add('player-card');
-
-      const playerImage = document.createElement('img');
-      playerImage.classList.add('player-image');
-      playerImage.src = `images/${player.image}`;
-      playerImage.alt = `${player.player_name} Image`;
-
-      const playerName = document.createElement('div');
-      playerName.textContent = player.player_name;
-
-      playerCard.appendChild(playerImage);
-      playerCard.appendChild(playerName);
-
-      playerProfiles.appendChild(playerCard);
-    });
-  </script>
+  <script src="App.js"></script>
 </body>
 </html>
