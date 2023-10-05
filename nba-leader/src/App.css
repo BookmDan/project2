@@ -1,5 +1,7 @@
 .App {
   text-align: center;
+  background-color: white;
+  color: black;
 }
 
 .App-logo {
@@ -35,4 +37,29 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+.App.dark {
+  --font-color: rgb(255, 255, 255);
+  --background: rgb(50, 50, 50);
+  --background-light: rgb(101, 101, 101);
+  transition: all 0.3s;
+  background-color: black;
+  color: white;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+header h2 {
+  padding: 1rem 0;
+}
+
+header button {
+  background: var(--yellow);
 }
