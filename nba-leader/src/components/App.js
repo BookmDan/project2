@@ -2,7 +2,7 @@ import React, { useState, useEffect  }  from 'react';
 import PlayerList from './PlayerList';
 import Header from './Header';
 import '../App.css';
-import TopDefense from './TopDefense';
+import TopDefense from './TopDefensivePlayers';
 
 function App() {
   const [isDarkMode, setIsDarkMode] = useState(false);
