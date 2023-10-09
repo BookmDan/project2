@@ -1,12 +1,16 @@
 import React, { useState, useEffect  }  from 'react';
 import PlayerList from './PlayerList';
+import NavBar from './NavBar';
 import Header from './Header';
 import '../App.css';
-import TopDefense from './TopDefensivePlayers';
+import TopOffensivePlayers from './TopOffensivePlayers';
+import TopDefensivePlayers from './TopDefensivePlayers';
+import TopAssists from './TopAssists';
 
 function App() {
   const [isDarkMode, setIsDarkMode] = useState(false);
   const [players, setPlayers] = useState([]);
+  const [currentPage, setCurrentPage] = useState(null);
 
   useEffect(() => {
     fetch('http://localhost:3000/players')
@@ -17,10 +21,18 @@ function App() {
   function handleDarkModeClick() {
     setIsDarkMode((prevIsDarkMode) => !prevIsDarkMode);
   }
+
+  const handleChangePage = (page) => {
+    setCurrentPage(page);
+  };
   return (
-    <div className={`App ${isDarkMode ? 'dark' : 'light'}`}>
-      <Header isDarkMode={isDarkMode} onDarkModeClick={handleDarkModeClick} />
-      <TopDefense players={players} />
+    <div>
+      {/* <Header isDarkMode={isDarkMode} onDarkModeClick={handleDarkModeClick} /> */}
+      {/* <TopDefense players={players} /> */}
+      <NavBar onChangePage={handleChangePage} />
+      {currentPage === "Offensive" && <TopOffensivePlayers />}
+      {currentPage === "Defensive" && <TopDefensivePlayers />}
+      {currentPage === "Assists" && <TopAssists />}
       <PlayerList />
     </div>
   );
@@ -28,27 +40,3 @@ function App() {
 
 export default App;
 
-// import React, { useState } from 'react';
-// import NavBar from './NavBar';
-// import TopOffensivePlayers from './TopOffensivePlayers';
-// import TopDefensivePlayers from './TopDefensivePlayers';
-// import TopAssists from './TopAssists';
-
-// const App = () => {
-//   const [currentPage, setCurrentPage] = useState(null);
-
-//   const handleChangePage = (page) => {
-//     setCurrentPage(page);
-//   };
-
-//   return (
-//     <div>
-//       <NavBar onChangePage={handleChangePage} />
-//       {currentPage === "Offensive" && <TopOffensivePlayers />}
-//       {currentPage === "Defensive" && <TopDefensivePlayers />}
-//       {currentPage === "Assists" && <TopAssists />}
-//     </div>
-//   );
-// };
-
-// export default App;
