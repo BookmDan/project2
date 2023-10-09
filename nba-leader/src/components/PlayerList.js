@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from 'react';
+import OffensivePlayerItem from './OffensivePlayerItem'; 
 
 const PlayerList = () => {
   const [players, setPlayers] = useState([]);
   const [playerName, setPlayerName] = useState('');
   const [playerImage, setPlayerImage] = useState('');
   const [showForm, setShowForm] = useState(false);
+  const [showTopPlayers, setShowTopPlayers] = useState(false);
 
   const URL = 'http://localhost:3000/players';
 
@@ -47,10 +49,17 @@ const PlayerList = () => {
       .catch(error => console.error('Error creating player:', error));
   };
 
+  const toggleShowTopPlayers = () => {
+    setShowTopPlayers(prevShowTopPlayers => !prevShowTopPlayers);
+  };
+
   return (
     <div>
       <nav>
         <button onClick={() => setShowForm(!showForm)}>Toggle Form</button>
+        <button onClick={toggleShowTopPlayers}>
+          {showTopPlayers ? 'Show All Players' : 'Show Top Players'}
+        </button>
       </nav>
       {showForm && (
         <form onSubmit={createPlayer}>
@@ -69,6 +78,12 @@ const PlayerList = () => {
           <button type="submit">Create Player</button>
         </form>
       )}
+      {/* <div>
+        {players.map(player => (
+          <OffensivePlayerItem key={player.id} player={player} />
+        ))}
+      </div> */}
+
       <div>
         {players.map(player => (
           <div key={player.id} className="card">
