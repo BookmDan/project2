@@ -32,8 +32,22 @@ body {
   box-shadow: 3px 4px #e04b52;
   text-align: center;
 }
+nav {
+  display: flex;
+  padding-left: 20px; /* Adjust the value to control the left padding */
+}
+
+/* CSS for individual buttons in the NavBar */
+nav button {
+  padding: 10px; /* Add padding for all sides */
+  margin-right: 10px; /* Add margin between buttons */
+}
 
 button {
+  padding-left: 15px;
+  padding-right: 15px;
+  text-align: center;
+  margin-right: 10px;
   position: relative;
   background-color: #e04b52;
   border: none;
@@ -49,6 +63,46 @@ button:hover {
   background-color: whitesmoke;
   border: #e04b52 solid 1px;
   color: #e04b52;
+}
+
+header {
+  padding-left: 20px;
+}
+
+h1 {
+  padding-left: 20px; /* Adjust the value as needed */
+}
+/* Styles for light mode */
+.light-mode {
+  background-color: white;
+  color: black;
+}
+
+.light-mode button {
+  background-color: #f0f0f0;
+  color: black;
+}
+
+.light-mode header {
+  background-color: #f0f0f0;
+  color: black;
+}
+
+/* Styles for dark mode */
+.dark-mode {
+  background-color: #121212;
+  color: white;
+}
+
+.dark-mode button {
+  background-color: #333;
+  color: white;
+}
+
+
+.dark-mode header {
+  background-color: #121212;
+  color: white;
 }
 
 .container {
