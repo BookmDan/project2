@@ -31,9 +31,12 @@ const TopPlayers = ({category}) => {
         // Sort based on the relevant metric for the category
         let sortedPlayers;
         if (category === 'offensive') {
-          sortedPlayers = data.players.sort((a, b) => (b.PTS / b.minutes_played) - (a.PTS / a.minutes_played));
+          sortedPlayers = data.players.filter(player => player.games >= 65);
+          sortedPlayers = sortedPlayers.sort((a, b) => (b.PTS / b.minutes_played) - (a.PTS / a.minutes_played));
+          // sortedPlayers = data.players.sort((a, b) => (b.PTS / b.minutes_played) - (a.PTS / a.minutes_played));
         } else if (category === 'defensive') {
-          sortedPlayers = data.players.sort((a, b) => (b.BLK / b.minutes_played) - (a.BLK / a.minutes_played));
+          sortedPlayers = data.players.sort((a, b) => (b.BLK * 0.6 + b.STL * 0.4) - (a.BLK * 0.6 + a.STL * 0.4));
+          // sortedPlayers = data.players.sort((a, b) => (b.BLK / b.minutes_played) - (a.BLK / a.minutes_played));
         } else if (category === 'assists') {
           sortedPlayers = data.players.sort((a, b) => b.AST - a.AST);
         }
