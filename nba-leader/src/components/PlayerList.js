@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import OffensivePlayerItem from './OffensivePlayerItem'; 
+import PlayerItem from './PlayerItem'; 
 
 const PlayerList = () => {
   const [players, setPlayers] = useState([]);
@@ -86,12 +86,15 @@ const PlayerList = () => {
 
       <div>
         {players.map(player => (
-          <div key={player.id} className="card">
+        <PlayerItem key={player.id} player={player} />  
+      ))}
+
+          {/* <div key={player.id} className="card">
             <h2>{player.player_name}</h2>
             <img src={player.image} alt={player.player_name} className="player-avatar" />
             <p>{player.PTS} Points</p>
           </div>
-        ))}
+        ))} */}
       </div>
     </div>
   );

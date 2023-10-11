@@ -29,40 +29,6 @@ const TopDefensivePlayers = () => {
     fetchData();
   }, []);
 
-  // const calculateTopDefensivePlayers = () => {
-  //   const fetchData = async () => {
-  //     try {
-  //       const response = await fetch("../../db.json");
-  //       const data = await response.json();
-  //       console.log(data)
-
-  //       const playersWithDefensiveRating = data.players.map((player) => ({
-  //         ...player,
-  //         defensiveRating: player.STL * 0.4 + player.BLK * 0.6,
-  //       }));
-
-  //       const sortedPlayers = playersWithDefensiveRating.sort(
-  //         (a, b) => b.defensiveRating - a.defensiveRating
-  //       );
-
-  //       setDefensivePlayers(sortedPlayers.slice(0, 3));
-  //       setShowProfiles(true);
-  //     } catch (error) {
-  //       console.error("Error fetching player data:", error);
-  //     }
-  //   };
-
-  //   fetchData();
-  // };
-  // const handleButtonClick = () => {
-  //   // Update the state variable when a button is clicked
-  //   setShowProfiles(true);
-  // };
-//   return { defensivePlayers, showProfiles };
-// };
-
-// export default useTopDefensivePlayers;
-
   return (
     <div>
       <h2>Top 3 Defensive Players</h2>
