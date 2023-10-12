@@ -1,17 +1,22 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
+    //  <button onClick={() => onChangePage("offensive")}>Top Offensive Players</button>
+    //  <button onClick={() => onChangePage("defensive")}>Top Defensive Players</button>
+    //  <button onClick={() => onChangePage("assists")}>Top Assists Players</button> 
 
-
-      // <Link to="/offensive">Top Offensive Players</Link>
-      // <Link to="/defensive">Top Defensive Players</Link>
-      // <Link to="/assists">Top Assists Players</Link>
 function NavBar({onChangePage}) {
   return (
     <nav>
-      <button onClick={() => onChangePage("offensive")}>Top Offensive Players</button>
-      <button onClick={() => onChangePage("defensive")}>Top Defensive Players</button>
-      <button onClick={() => onChangePage("assists")}>Top Assists Players</button>
+      <Link to="/offensive" className="nav-button">
+        <button>Top Offensive Players</button>
+      </Link>
+      <Link to="/defensive" className="nav-button">
+        <button>Top Defensive Players</button>
+      </Link>
+      <Link to="/assists" className="nav-button">
+        <button>Top Assists Players</button>
+      </Link>
     </nav>
   );
 }

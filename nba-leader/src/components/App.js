@@ -7,6 +7,7 @@ import '../App.css';
 import TopPlayers from './TopPlayers';
 
 function App() {
+  const [showTopPlayers, setShowTopPlayers] = useState(false);
   const [isDarkMode, setIsDarkMode] = useState(false);
   const [players, setPlayers] = useState([]);
   const [formData, setFormData] = useState({
@@ -24,6 +25,14 @@ function App() {
       .then((res) => res.json())
       .then((data) => setPlayers(data))
       .catch((error) => console.error('Error fetching players:', error));
+  };
+
+  const toggleShowTopPlayers = () => {
+    setShowTopPlayers(prevShowTopPlayers => !prevShowTopPlayers);
+  };
+
+  const toggleDarkMode = () => {
+    setIsDarkMode(prevIsDarkMode => !prevIsDarkMode);
   };
 
   function handleDarkModeClick() {
@@ -56,9 +65,6 @@ function App() {
       .catch((error) => console.error('Error adding player:', error));
   };
 
-  // players={players}
-  // fetchPlayers={fetchPlayers}
-
   return (
     <Router>
         <div>
@@ -67,35 +73,28 @@ function App() {
         <Routes>
           <Route
             path="/offensive"
-            element={
-              <TopPlayers
-                category="offensive"
-              />
-            }
+            element={<TopPlayers category="offensive"/>}
           />
           <Route
             path="/defensive"
-            element={
-              <TopPlayers
-                category="defensive"
-              />
-            }
+            element={<TopPlayers category="defensive"/>}
           />
           <Route
             path="/assists"
-            element={
-              <TopPlayers
-                category="assists"
-              />
-            }
+            element={<TopPlayers category="assists"/>}
           />
           <Route
             path="/"
             element={
               <PlayerList
-                formData={formData}
-                handleChange={handleChange}
-                handleSubmit={handleSubmit}
+                players={players}
+                showTopPlayers={false} // Modify based on your logic
+                isDarkMode={isDarkMode}
+                toggleShowTopPlayers={toggleShowTopPlayers}
+                toggleDarkMode={toggleDarkMode}
+                formData={formData} // Pass formData as a prop
+                handleChange={handleChange} // Pass handleChange as a prop
+                handleSubmit={handleSubmit} // Pass handleSubmit as a prop
               />
             }
           />
