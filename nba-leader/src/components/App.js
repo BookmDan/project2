@@ -13,9 +13,8 @@ function App() {
   const [formData, setFormData] = useState({
     player_name: '',
     PTS: '',
-  })
-  // const [currentPage, setCurrentPage] = useState(null);
-  
+  });
+
   useEffect(() => {
     fetchPlayers();
   }, []);
@@ -28,11 +27,11 @@ function App() {
   };
 
   const toggleShowTopPlayers = () => {
-    setShowTopPlayers(prevShowTopPlayers => !prevShowTopPlayers);
+    setShowTopPlayers((prevShowTopPlayers) => !prevShowTopPlayers);
   };
 
   const toggleDarkMode = () => {
-    setIsDarkMode(prevIsDarkMode => !prevIsDarkMode);
+    setIsDarkMode((prevIsDarkMode) => !prevIsDarkMode);
   };
 
   function handleDarkModeClick() {
@@ -46,10 +45,8 @@ function App() {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    // Handle form submission with formData
     console.log('Form submitted with data:', formData);
 
-    // Send a POST request to add a new player
     fetch('http://localhost:3000/players', {
       method: 'POST',
       headers: {
@@ -60,41 +57,45 @@ function App() {
       .then((res) => res.json())
       .then((data) => {
         console.log('Player added:', data);
-        setPlayers([...players, data]); // Update the players state with the new player
+        setPlayers([...players, data]);
       })
       .catch((error) => console.error('Error adding player:', error));
   };
-
+  // onDarkModeClick={toggleDarkMode}
   return (
     <Router>
-        <div>
-        <Header isDarkMode={isDarkMode} onDarkModeClick={handleDarkModeClick} />
+      <div>
+        <Header
+          isDarkMode={isDarkMode}
+          onDarkModeClick={handleDarkModeClick} 
+          onToggleShowPlayers={toggleShowTopPlayers}
+        />
         <NavBar />
         <Routes>
           <Route
             path="/offensive"
-            element={<TopPlayers category="offensive"/>}
+            element={<TopPlayers category="offensive" />}
           />
           <Route
             path="/defensive"
-            element={<TopPlayers category="defensive"/>}
+            element={<TopPlayers category="defensive" />}
           />
           <Route
             path="/assists"
-            element={<TopPlayers category="assists"/>}
+            element={<TopPlayers category="assists" />}
           />
           <Route
             path="/"
             element={
               <PlayerList
                 players={players}
-                showTopPlayers={false} // Modify based on your logic
-                isDarkMode={isDarkMode}
                 toggleShowTopPlayers={toggleShowTopPlayers}
                 toggleDarkMode={toggleDarkMode}
-                formData={formData} // Pass formData as a prop
-                handleChange={handleChange} // Pass handleChange as a prop
-                handleSubmit={handleSubmit} // Pass handleSubmit as a prop
+                showTopPlayers={showTopPlayers}
+                isDarkMode={isDarkMode}
+                formData={formData}
+                handleChange={handleChange}
+                handleSubmit={handleSubmit}
               />
             }
           />
@@ -105,4 +106,3 @@ function App() {
 }
 
 export default App;
-

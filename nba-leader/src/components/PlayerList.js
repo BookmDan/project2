@@ -9,29 +9,7 @@ const PlayerList = ({players, isDarkMode, toggleDarkMode}) => {
   const toggleShowTopPlayers = () => {
     setShowTopPlayers((prevShowTopPlayers) => !prevShowTopPlayers);
   };
-  // const [players, setPlayers] = useState([]);
-  // const [isDarkMode, setIsDarkMode] = useState(false);
 
-  // const URL = 'http://localhost:3000/players';
-
-  // useEffect(() => {
-  //   fetchPlayers();
-  // }, []);
-
-  // const fetchPlayers = () => {
-  //   fetch(URL)
-  //     .then(res => res.json())
-  //     .then(data => setPlayers(data))
-  //     .catch(error => console.error('Error fetching players:', error));
-  // };
-
-  // const toggleShowTopPlayers = () => {
-  //   setShowTopPlayers(prevShowTopPlayers => !prevShowTopPlayers);
-  // };
-
-  // const toggleDarkMode = () => {
-  //   setIsDarkMode(prevIsDarkMode => !prevIsDarkMode);
-  // };
 
   return (
     <div className={isDarkMode ? 'dark-mode' : 'light-mode'}>
@@ -46,7 +24,6 @@ const PlayerList = ({players, isDarkMode, toggleDarkMode}) => {
 
       <div>
         {showTopPlayers ? (
-          // Render top players
           <TopPlayers category="offensive" />
         ) : (
           (players.map(player => (
