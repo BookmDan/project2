@@ -18,10 +18,13 @@ body {
 }
 
 .card {
-  width: 200px;
+  width: 250px;
+  height: 200px;
   margin: 10px;
   padding: 10px;
   border: 1px solid #ccc;
+  /* border-radius:1px; */
+  margin-bottom: 10px;
   text-align: center;
   border: grey solid 1px;
   padding: 1rem;
@@ -38,11 +41,40 @@ body {
 }
 
 .card-content {
+  width: 200px;
+  height: 200px;
   display: flex;
   flex-direction: column;
   align-items: baseline;
   justify-content: space-between;
   height: 100%;
+}
+
+.card img {
+  max-width: 135%; /* Ensure image doesn't exceed card width */
+}
+
+.card h2 {
+  margin-bottom: 5px; /* Margin between heading and other content */
+  margin-left:auto;
+  justify-content: baseline;
+  /* margin-block-start: 10px; */
+  margin-top: auto;
+}
+
+.card p{
+  margin-left:auto;
+  margin-block-start: 2px;
+  margin-top:auto;
+}
+
+/* Add additional styles as needed */
+
+/* Example: Dark mode */
+.dark-mode .card {
+  border-color: #222; /* Adjust border color for dark mode */
+  background-color: #333; /* Adjust background color for dark mode */
+  color: #fff; /* Adjust text color for dark mode */
 }
 
 nav {
