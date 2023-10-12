@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import PlayerItem from './PlayerItem'; 
 
+// send props from App.js 
 const PlayerList = () => {
   const [players, setPlayers] = useState([]);
   const [showTopPlayers, setShowTopPlayers] = useState(false);
