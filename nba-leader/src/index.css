@@ -17,6 +17,10 @@ body {
   font-family: monospace;
 }
 
+h2{
+  margin-left: 10px;
+}
+
 .card {
   width: 250px;
   height: 200px;
@@ -201,3 +205,14 @@ h1 {
   margin: 3px;
 }
 
+/* Add this CSS to your stylesheet */
+ul {
+  display: flex;
+  list-style: none;
+  padding: 0;
+  margin-left: 20px; 
+}
+
+li {
+  margin-right: 20px; /* Adjust spacing between player cards */
+}

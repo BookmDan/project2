@@ -74,15 +74,15 @@ function App() {
         <Routes>
           <Route
             path="/offensive"
-            element={<TopPlayers category="offensive" />}
+            element={<TopPlayers category="offensive" players={players} />}
           />
           <Route
             path="/defensive"
-            element={<TopPlayers category="defensive" />}
+            element={<TopPlayers category="defensive" players={players} />}
           />
           <Route
             path="/assists"
-            element={<TopPlayers category="assists" />}
+            element={<TopPlayers category="assists" players={players}/>}
           />
           <Route
             path="/"
