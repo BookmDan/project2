@@ -26,9 +26,9 @@ function App() {
       .catch((error) => console.error('Error fetching players:', error));
   };
 
-  const toggleShowTopPlayers = () => {
-    setShowTopPlayers((prevShowTopPlayers) => !prevShowTopPlayers);
-  };
+  // const toggleShowTopPlayers = () => {
+  //   setShowTopPlayers((prevShowTopPlayers) => !prevShowTopPlayers);
+  // };
 
   const toggleDarkMode = () => {
     setIsDarkMode((prevIsDarkMode) => !prevIsDarkMode);
@@ -62,13 +62,16 @@ function App() {
       .catch((error) => console.error('Error adding player:', error));
   };
   // onDarkModeClick={toggleDarkMode}
+  // onToggleShowPlayers={toggleShowTopPlayers}
+  // toggleShowTopPlayers = { toggleShowTopPlayers }
+  // showTopPlayers={showTopPlayers}
   return (
     <Router>
       <div>
         <Header
           isDarkMode={isDarkMode}
           onDarkModeClick={handleDarkModeClick} 
-          onToggleShowPlayers={toggleShowTopPlayers}
+    
         />
         <NavBar />
         <Routes>
@@ -89,9 +92,7 @@ function App() {
             element={
               <PlayerList
                 players={players}
-                toggleShowTopPlayers={toggleShowTopPlayers}
                 toggleDarkMode={toggleDarkMode}
-                showTopPlayers={showTopPlayers}
                 isDarkMode={isDarkMode}
                 formData={formData}
                 handleChange={handleChange}

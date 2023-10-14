@@ -8,6 +8,9 @@ import { Link } from 'react-router-dom';
 function NavBar({onChangePage}) {
   return (
     <nav>
+      <Link to="/" className="nav-button">
+        <button>Home</button>
+      </Link>
       <Link to="/offensive" className="nav-button">
         <button>Top Offensive Players</button>
       </Link>

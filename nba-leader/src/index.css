@@ -90,19 +90,20 @@ nav {
 nav button {
   padding: 10px; /* Add padding for all sides */
   margin-right: 10px; /* Add margin between buttons */
-   /*
-  text-decoration: none;
-  background: none;
+  background-color: #e04b52;
   border: none;
-  padding: 0;
+  border-radius: 5px;
+  color: whitesmoke;
+  font-size: 18px;
+  justify-self: center;
   cursor: pointer;
-  font-size: 16px;
-  font-weight: bold;
-  color: blue; Adjust color as needed */
 }
 
 .nav-button:hover {
   text-decoration: underline; /* Add underline on hover */
+  background-color: whitesmoke;
+  border: #e04b52 solid 1px;
+  color: #e04b52;
 }
 
 button {
