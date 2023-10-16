@@ -10,24 +10,8 @@ const PlayerList = ({ players,
   handleChange,
   handleSubmit,
   handleUpdateStat,}) => {
-  const [showTopPlayers, setShowTopPlayers] = useState(false);
   const [selectedPlayerId, setSelectedPlayerId] = useState(false);
 
-  // const toggleShowTopPlayers = () => {
-  //   setShowTopPlayers((prevShowTopPlayers) => !prevShowTopPlayers);
-  // };
-
-  // <button onClick={toggleShowTopPlayers}>
-  //         {showTopPlayers ? 'Show All Players' : 'Show Top Players'}
-  //       </button>
-
-  // {selectedPlayerId ? (
-  //   <TopPlayers category="offensive" />
-  // ) : (
-  //   (players.map(player => (
-  //     <PlayerItem key={player.id} player={player} />
-  //   ))
-  //   ))}
   return (
     <div className={isDarkMode ? 'dark-mode' : 'light-mode'}>
       <button onClick={toggleDarkMode}>
