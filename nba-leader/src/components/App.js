@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import PlayerList from './PlayerList';
 import NavBar from './NavBar';
 import Header from './Header';
+import UpdatePlayerStat from './UpdatePlayerStat';  
 import '../App.css';
 import TopPlayers from './TopPlayers';
 
@@ -25,17 +26,9 @@ function App() {
       .catch((error) => console.error('Error fetching players:', error));
   };
 
-  // const toggleShowTopPlayers = () => {
-  //   setShowTopPlayers((prevShowTopPlayers) => !prevShowTopPlayers);
-  // };
-
   const toggleDarkMode = () => {
     setIsDarkMode((prevIsDarkMode) => !prevIsDarkMode);
   };
-
-  function handleDarkModeClick() {
-    setIsDarkMode((prevIsDarkMode) => !prevIsDarkMode);
-  }
 
   const handleChange = (event) => {
     const { name, value } = event.target;
@@ -61,12 +54,15 @@ function App() {
       .catch((error) => console.error('Error adding player:', error));
   };
 
+  const handleUpdateStat = (playerId, newStats) => {
+    // Logic to update player statistics goes here
+    console.log('Update stats for player with ID', playerId, 'New stats:', newStats);
+  };
+
   return (
     <Router>
       <div>
         <Header
-          isDarkMode={isDarkMode}
-          onDarkModeClick={handleDarkModeClick} 
         />
         <NavBar />
         <Routes>
@@ -92,7 +88,17 @@ function App() {
                 formData={formData}
                 handleChange={handleChange}
                 handleSubmit={handleSubmit}
+                handleUpdateStat={handleUpdateStat} 
               />
+            }
+          />
+          <Route
+            path="/"
+            element={
+              <UpdatePlayerStat 
+                  players={players} 
+                  handleUpdateStat={handleUpdateStat}
+                />
             }
           />
         </Routes>

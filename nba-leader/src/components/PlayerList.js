@@ -1,35 +1,60 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import PlayerItem from './PlayerItem'; 
-import TopPlayers from './TopPlayers'; // Import TopPlayers component
+import UpdatePlayerStat from './UpdatePlayerStat';  
 
 // send props from App.js 
-const PlayerList = ({players, isDarkMode, toggleDarkMode}) => {
+const PlayerList = ({ players,
+  toggleDarkMode,
+  isDarkMode,
+  formData,
+  handleChange,
+  handleSubmit,
+  handleUpdateStat,}) => {
   const [showTopPlayers, setShowTopPlayers] = useState(false);
+  const [selectedPlayerId, setSelectedPlayerId] = useState(false);
 
-  const toggleShowTopPlayers = () => {
-    setShowTopPlayers((prevShowTopPlayers) => !prevShowTopPlayers);
-  };
+  // const toggleShowTopPlayers = () => {
+  //   setShowTopPlayers((prevShowTopPlayers) => !prevShowTopPlayers);
+  // };
 
+  // <button onClick={toggleShowTopPlayers}>
+  //         {showTopPlayers ? 'Show All Players' : 'Show Top Players'}
+  //       </button>
 
+  // {selectedPlayerId ? (
+  //   <TopPlayers category="offensive" />
+  // ) : (
+  //   (players.map(player => (
+  //     <PlayerItem key={player.id} player={player} />
+  //   ))
+  //   ))}
   return (
     <div className={isDarkMode ? 'dark-mode' : 'light-mode'}>
-      <nav>
-        <button onClick={toggleShowTopPlayers}>
-          {showTopPlayers ? 'Show All Players' : 'Show Top Players'}
-        </button>
-        <button onClick={toggleDarkMode}>
-          {isDarkMode ? 'Light' : 'Dark'} Mode
-        </button>
-      </nav>
+      <button onClick={toggleDarkMode}>
+        {isDarkMode ? 'Light' : 'Dark'} Mode
+      </button>
 
       <div>
-        {showTopPlayers ? (
-          <TopPlayers category="offensive" />
-        ) : (
-          (players.map(player => (
-            <PlayerItem key={player.id} player={player} />
-          ))
-          ))}
+        {players.map((player) => (
+          <div key={player.id} className="player-card">
+            <PlayerItem player={player} />
+
+            {/* Button to update player stat */}
+            <button onClick={() => setSelectedPlayerId(player.id)}>
+              Update Player Stat
+            </button>
+
+            {/* Conditionally render the update form */}
+            {selectedPlayerId === player.id && (
+              <UpdatePlayerStat
+                playerId={player.id}
+                onUpdateStat={(playerId, newStats) =>
+                  handleUpdateStat(playerId, newStats)
+                }
+              />
+            )}
+          </div>
+        ))}
       </div>
     </div>
   );
