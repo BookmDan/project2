@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-function Header({ isDarkMode, toggleDarkMode, onToggleShowPlayers }) {
+function Header() {
 
   // <h2>NBA 2023 Top Charts</h2>
   //     <button onClick={onToggleShowPlayers}>Show All Players</button>

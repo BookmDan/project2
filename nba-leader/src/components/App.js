@@ -7,7 +7,6 @@ import '../App.css';
 import TopPlayers from './TopPlayers';
 
 function App() {
-  const [showTopPlayers, setShowTopPlayers] = useState(false);
   const [isDarkMode, setIsDarkMode] = useState(false);
   const [players, setPlayers] = useState([]);
   const [formData, setFormData] = useState({
@@ -61,17 +60,13 @@ function App() {
       })
       .catch((error) => console.error('Error adding player:', error));
   };
-  // onDarkModeClick={toggleDarkMode}
-  // onToggleShowPlayers={toggleShowTopPlayers}
-  // toggleShowTopPlayers = { toggleShowTopPlayers }
-  // showTopPlayers={showTopPlayers}
+
   return (
     <Router>
       <div>
         <Header
           isDarkMode={isDarkMode}
           onDarkModeClick={handleDarkModeClick} 
-    
         />
         <NavBar />
         <Routes>

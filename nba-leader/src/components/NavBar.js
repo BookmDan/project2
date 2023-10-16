@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
     //  <button onClick={() => onChangePage("defensive")}>Top Defensive Players</button>
     //  <button onClick={() => onChangePage("assists")}>Top Assists Players</button> 
 
-function NavBar({onChangePage}) {
+function NavBar() {
   return (
     <nav>
       <Link to="/" className="nav-button">
