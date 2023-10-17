@@ -58,13 +58,22 @@ function App() {
     // Logic to update player statistics goes here
     console.log('Update stats for player with ID', playerId, 'New stats:', newStats);
   };
-
+{/* <Route
+            path="/"
+            element={
+              <UpdatePlayerStat 
+                  players={players} 
+                  handleUpdateStat={handleUpdateStat}
+                />
+            }
+          /> */}
   return (
     <Router>
       <div>
         <Header
         />
-        <NavBar />
+        <NavBar handleUpdateStat={handleUpdateStat} />
+        <UpdatePlayerStat handleUpdateStat={handleUpdateStat} />
         <Routes>
           <Route
             path="/offensive"
@@ -92,15 +101,7 @@ function App() {
               />
             }
           />
-          <Route
-            path="/"
-            element={
-              <UpdatePlayerStat 
-                  players={players} 
-                  handleUpdateStat={handleUpdateStat}
-                />
-            }
-          />
+          
         </Routes>
       </div>
     </Router>

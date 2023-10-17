@@ -1,11 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import UpdatePlayerStat from './UpdatePlayerStat';
 
-    //  <button onClick={() => onChangePage("offensive")}>Top Offensive Players</button>
-    //  <button onClick={() => onChangePage("defensive")}>Top Defensive Players</button>
-    //  <button onClick={() => onChangePage("assists")}>Top Assists Players</button> 
-
-function NavBar() {
+function NavBar({handleUpdateStat}) {
   return (
     <nav>
       <Link to="/" className="nav-button">
@@ -20,6 +17,7 @@ function NavBar() {
       <Link to="/assists" className="nav-button">
         <button>Top Assists Players</button>
       </Link>
+      <UpdatePlayerStat handleUpdateStat={handleUpdateStat} />
     </nav>
   );
 }
