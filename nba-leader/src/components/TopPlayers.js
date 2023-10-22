@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import PlayerItem from './PlayerItem'; 
+import PlayerCard from './PlayerCard'; 
 
 const TopPlayers = ({category, players}) => {
   const [topPlayers, setTopPlayers] = useState([]);
@@ -27,7 +27,7 @@ const TopPlayers = ({category, players}) => {
         {topPlayers.map((player, index) => (
           <ul key={player.id}>
             {`#${index + 1}`}
-            <PlayerItem key={player.id} player={player} category={category} />
+            <PlayerCard key={player.id} player={player} category={category} />
           </ul>
         ))}
       </ul>

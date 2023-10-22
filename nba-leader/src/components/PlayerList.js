@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
-import PlayerItem from './PlayerItem'; 
+import PlayerCard from './PlayerCard'; 
 import UpdatePlayerStat from './UpdatePlayerStat';  
+import NewPlayerForm from './NewPlayerForm';  
+
 
 // send props from App.js 
 const PlayerList = ({ players,
@@ -9,37 +11,22 @@ const PlayerList = ({ players,
   formData,
   handleChange,
   handleSubmit,
-  handleUpdateStat,}) => {
+  handleAddNewPlayer}) => {
   const [selectedPlayerId, setSelectedPlayerId] = useState(false);
-
+  
   return (
     <div className={isDarkMode ? 'dark-mode' : 'light-mode'}>
       <button onClick={toggleDarkMode}>
         {isDarkMode ? 'Light' : 'Dark'} Mode
       </button>
-
       <div>
         {players.map((player) => (
           <div key={player.id} className="player-card">
-            <PlayerItem player={player} />
-
-            {/* Button to update player stat */}
-            <button onClick={() => setSelectedPlayerId(player.id)}>
-              Update Player Stat
-            </button>
-
-            {/* Conditionally render the update form */}
-            {selectedPlayerId === player.id && (
-              <UpdatePlayerStat
-                playerId={player.id}
-                onUpdateStat={(playerId, newStats) =>
-                  handleUpdateStat(playerId, newStats)
-                }
-              />
-            )}
+            <PlayerCard player={player} />
           </div>
         ))}
       </div>
+      <NewPlayerForm onAddNewPlayer={handleAddNewPlayer} />
     </div>
   );
 };

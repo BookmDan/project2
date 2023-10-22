@@ -4,6 +4,7 @@ import PlayerList from './PlayerList';
 import NavBar from './NavBar';
 import Header from './Header';
 import UpdatePlayerStat from './UpdatePlayerStat';  
+import NewPlayerForm from './NewPlayerForm';  
 import '../App.css';
 import TopPlayers from './TopPlayers';
 
@@ -28,6 +29,13 @@ function App() {
 
   const toggleDarkMode = () => {
     setIsDarkMode((prevIsDarkMode) => !prevIsDarkMode);
+  };
+
+  const handleAddNewPlayer = (newPlayer) => {
+    // Create a copy of the current players and add the new player to it.
+    const updatedPlayers = [...players, newPlayer];
+    // Set the updated players in the state.
+    setPlayers(updatedPlayers);
   };
 
   const handleChange = (event) => {
@@ -72,8 +80,8 @@ function App() {
       <div>
         <Header
         />
-        <NavBar handleUpdateStat={handleUpdateStat} />
-        <UpdatePlayerStat handleUpdateStat={handleUpdateStat} />
+        <NavBar/>
+        <NewPlayerForm onAddNewPlayer={handleAddNewPlayer} /> 
         <Routes>
           <Route
             path="/offensive"
@@ -97,7 +105,7 @@ function App() {
                 formData={formData}
                 handleChange={handleChange}
                 handleSubmit={handleSubmit}
-                handleUpdateStat={handleUpdateStat} 
+                handleAddNewPlayer={handleAddNewPlayer}
               />
             }
           />

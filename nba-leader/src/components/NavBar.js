@@ -1,8 +1,9 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import UpdatePlayerStat from './UpdatePlayerStat';
+import NewPlayerForm from './NewPlayerForm';
 
-function NavBar({handleUpdateStat}) {
+function NavBar() {
   return (
     <nav>
       <Link to="/" className="nav-button">
@@ -17,7 +18,6 @@ function NavBar({handleUpdateStat}) {
       <Link to="/assists" className="nav-button">
         <button>Top Assists Players</button>
       </Link>
-      <UpdatePlayerStat handleUpdateStat={handleUpdateStat} />
     </nav>
   );
 }
