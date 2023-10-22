@@ -1,14 +1,17 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 
-function Header() {
+const headerStyle = {
+  backgroundColor: '#333',
+  color: 'white',
+  padding: '1px',
+  display: 'flex',
+  justifyContent: 'space-between',
+  alignItems: 'center',
+};
 
-  // <h2>NBA 2023 Top Charts</h2>
-  //     <button onClick={onToggleShowPlayers}>Show All Players</button>
-  //     <button onClick={toggleDarkMode}>{isDarkMode ? 'Light' : 'Dark'} Mode</button>
-  
+function Header() {  
   return (
-    <header>
+    <header style={headerStyle}>
       <h1>NBA 2022-2023 Top Charts</h1>
     </header>
   );

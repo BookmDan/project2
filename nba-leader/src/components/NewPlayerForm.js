@@ -50,7 +50,7 @@ function NewPlayerForm({ onAddNewPlayer }) {
 
   return (
     <div className="new-player-form">
-      <h2>New Player</h2>
+      <h2>Add New Player</h2>
       <form onSubmit={handleSubmit}>
         <input
           type="text"

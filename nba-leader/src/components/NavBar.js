@@ -1,7 +1,5 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import UpdatePlayerStat from './UpdatePlayerStat';
-import NewPlayerForm from './NewPlayerForm';
 
 function NavBar() {
   return (

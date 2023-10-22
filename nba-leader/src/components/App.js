@@ -3,10 +3,10 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import PlayerList from './PlayerList';
 import NavBar from './NavBar';
 import Header from './Header';
-import UpdatePlayerStat from './UpdatePlayerStat';  
 import NewPlayerForm from './NewPlayerForm';  
 import '../App.css';
 import TopPlayers from './TopPlayers';
+import Footer from './Footer';
 
 function App() {
   const [isDarkMode, setIsDarkMode] = useState(false);
@@ -62,19 +62,6 @@ function App() {
       .catch((error) => console.error('Error adding player:', error));
   };
 
-  const handleUpdateStat = (playerId, newStats) => {
-    // Logic to update player statistics goes here
-    console.log('Update stats for player with ID', playerId, 'New stats:', newStats);
-  };
-{/* <Route
-            path="/"
-            element={
-              <UpdatePlayerStat 
-                  players={players} 
-                  handleUpdateStat={handleUpdateStat}
-                />
-            }
-          /> */}
   return (
     <Router>
       <div>
@@ -109,8 +96,8 @@ function App() {
               />
             }
           />
-          
         </Routes>
+        <Footer/>
       </div>
     </Router>
   );

@@ -102,8 +102,8 @@ nav button {
 .nav-button:hover {
   text-decoration: underline; /* Add underline on hover */
   background-color: whitesmoke;
-  border: #e04b52 solid 1px;
-  color: #e04b52;
+  border: #eb676e solid 1px;
+  color: #eb676e;
 }
 
 button {
@@ -129,7 +129,16 @@ button:hover {
 }
 
 header {
-  padding-left: 20px;
+  background-color: #333;
+  color: white;
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  /* position: fixed; Make the header fixed */
+  top: 0; /* Stick it to the top of the viewport */
+  width: 100%; /* Make it 100% wide */
+  z-index: 10; /* Ensure it appears above other content */
 }
 
 h1 {
@@ -216,4 +225,10 @@ ul {
 
 li {
   margin-right: 20px; /* Adjust spacing between player cards */
+}
+
+.new-player-form {
+  padding: 2rem 1rem;
+  margin: 2rem 0;
+  background-color: rgba(234, 85, 26, 0.779);
 }

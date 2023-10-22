@@ -7,7 +7,7 @@ const TopPlayers = ({category, players}) => {
     // Sort based on the relevant metric for the category
     let sortedPlayers;
     if (category === 'offensive') {
-      sortedPlayers = players.filter(player => player.games >= 65);
+      sortedPlayers = players.filter(player => player.games >= 60);
       sortedPlayers = sortedPlayers.sort((a, b) => (b.PTS / b.minutes_played) - (a.PTS / a.minutes_played));
     } else if (category === 'defensive') {
       sortedPlayers = players.sort((a, b) => (b.BLK * 0.6 + b.STL * 0.4) - (a.BLK * 0.6 + a.STL * 0.4));
