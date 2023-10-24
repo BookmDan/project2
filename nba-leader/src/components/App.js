@@ -11,10 +11,6 @@ import Footer from './Footer';
 function App() {
   const [isDarkMode, setIsDarkMode] = useState(false);
   const [players, setPlayers] = useState([]);
-  const [formData, setFormData] = useState({
-    player_name: '',
-    PTS: '',
-  });
 
   useEffect(() => {
     fetchPlayers();
@@ -36,30 +32,6 @@ function App() {
     const updatedPlayers = [...players, newPlayer];
     // Set the updated players in the state.
     setPlayers(updatedPlayers);
-  };
-
-  const handleChange = (event) => {
-    const { name, value } = event.target;
-    setFormData({ ...formData, [name]: value });
-  };
-
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    console.log('Form submitted with data:', formData);
-
-    fetch('http://localhost:3000/players', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify(formData),
-    })
-      .then((res) => res.json())
-      .then((data) => {
-        console.log('Player added:', data);
-        setPlayers([...players, data]);
-      })
-      .catch((error) => console.error('Error adding player:', error));
   };
 
   return (
@@ -89,10 +61,6 @@ function App() {
                 players={players}
                 toggleDarkMode={toggleDarkMode}
                 isDarkMode={isDarkMode}
-                formData={formData}
-                handleChange={handleChange}
-                handleSubmit={handleSubmit}
-                handleAddNewPlayer={handleAddNewPlayer}
               />
             }
           />
